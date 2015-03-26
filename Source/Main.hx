@@ -47,12 +47,12 @@ class Main extends Sprite {
 
 		//NOTE: Expected behaviour - nothign should change at all, as we just copy pixels forth and back.
 		//Copy pixel data around mouse from canvas ALPHA to tmp RED
-		tmp.copyChannel(canvas, bounds, new Point(), BitmapDataChannel.ALPHA, BitmapDataChannel.RED);
+		tmp.copyChannel(canvas, bounds, new Point(mouseX, mouseY), BitmapDataChannel.ALPHA, BitmapDataChannel.RED);
 		//Copy back same pixels from tmp RED to canvas ALPHA
 		canvas.copyChannel(tmp, tmp.rect, bounds.topLeft, BitmapDataChannel.RED, BitmapDataChannel.ALPHA);
 		
 		//Cleanup
-		tmp.dispose();
+//		tmp.dispose();
 	}
 
 }
